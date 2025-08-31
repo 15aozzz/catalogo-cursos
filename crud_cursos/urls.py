@@ -15,8 +15,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+from cursos import views  # Importa la vista
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.registrar_curso, name='inicio'),  # La raíz apunta al formulario
+    path('registrar/', views.registrar_curso, name='registrar_curso'),
 ]

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registrar Curso</title>
+</head>
+<body>
+    <h1>Registrar Curso</h1>
+    <form method="POST">
+        {% csrf_token %}
+        
+        <label>Curso:</label><br>
+        <input type="text" name="curso" required><br><br>
+
+        <label>Duración:</label><br>
+        <select name="duracion" required>
+            <option value="1 semana">1 semana</option>
+            <option value="2 semanas">2 semanas</option>
+            <option value="3 semanas">3 semanas</option>
+            <option value="4 semanas">4 semanas</option>
+            <option value="8 horas">8 horas</option>
+            <option value="16 horas">16 horas</option>
+            <option value="24 horas">24 horas</option>
+        </select><br><br>
+
+        <label>Plataforma:</label><br>
+        <select name="plataforma" required>
+            <option value="Udemy">Udemy</option>
+            <option value="Coursera">Coursera</option>
+            <option value="Platzi">Platzi</option>
+            <option value="edX">edX</option>
+            <option value="YouTube">YouTube</option>
+        </select><br><br>
+
+        <label>Dificultad:</label><br>
+        <select name="dificultad" required>
+            <option value="Facil">Fácil</option>
+            <option value="Intermedio">Intermedio</option>
+            <option value="Avanzado">Avanzado</option>
+        </select><br><br>
+
+        <button type="submit">Registrar</button>
+    </form>
+
+    {% if mensaje %}
+        <p style="color:green">{{ mensaje }}</p>
+    {% endif %}
+</body>
+</html>
