@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Curso</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+</head>
+<body>
+    <h1>Editar Curso</h1>
+    <form method="POST">
+        {% csrf_token %}
+
+        <label>Curso:</label><br>
+        <input type="text" name="curso" value="{{ curso.curso }}" required><br><br>
+
+        <label>Duración:</label><br>
+        <select name="duracion" required>
+            <option value="1 semana" {% if curso.duracion == "1 semana" %}selected{% endif %}>1 semana</option>
+            <option value="2 semanas" {% if curso.duracion == "2 semanas" %}selected{% endif %}>2 semanas</option>
+            <option value="3 semanas" {% if curso.duracion == "3 semanas" %}selected{% endif %}>3 semanas</option>
+            <option value="4 semanas" {% if curso.duracion == "4 semanas" %}selected{% endif %}>4 semanas</option>
+            <option value="8 horas" {% if curso.duracion == "8 horas" %}selected{% endif %}>8 horas</option>
+            <option value="16 horas" {% if curso.duracion == "16 horas" %}selected{% endif %}>16 horas</option>
+            <option value="24 horas" {% if curso.duracion == "24 horas" %}selected{% endif %}>24 horas</option>
+        </select><br><br>
+
+        <label>Plataforma:</label><br>
+        <select name="plataforma" required>
+            <option value="Udemy" {% if curso.plataforma == "Udemy" %}selected{% endif %}>Udemy</option>
+            <option value="Coursera" {% if curso.plataforma == "Coursera" %}selected{% endif %}>Coursera</option>
+            <option value="Platzi" {% if curso.plataforma == "Platzi" %}selected{% endif %}>Platzi</option>
+            <option value="edX" {% if curso.plataforma == "edX" %}selected{% endif %}>edX</option>
+            <option value="YouTube" {% if curso.plataforma == "YouTube" %}selected{% endif %}>YouTube</option>
+        </select><br><br>
+
+        <label>Dificultad:</label><br>
+        <select name="dificultad" required>
+            <option value="Facil" {% if curso.dificultad == "Facil" %}selected{% endif %}>Fácil</option>
+            <option value="Intermedio" {% if curso.dificultad == "Intermedio" %}selected{% endif %}>Intermedio</option>
+            <option value="Avanzado" {% if curso.dificultad == "Avanzado" %}selected{% endif %}>Avanzado</option>
+        </select><br><br>
+
+        <button type="submit">💾 Guardar cambios</button>
+    </form>
+</body>
+</html>

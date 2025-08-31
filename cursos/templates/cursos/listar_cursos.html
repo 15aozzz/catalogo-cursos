@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Cursos</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
+</head>
+<body>
+    <h1>Lista de Cursos Registrados</h1>
+
+    <a href="{% url 'registrar_curso' %}">➕ Registrar nuevo curso</a><br><br>
+
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>ID</th>
+            <th>Curso</th>
+            <th>Duración</th>
+            <th>Plataforma</th>
+            <th>Dificultad</th>
+            <th>Acciones</th>
+        </tr>
+
+        {% for curso in cursos %}
+        <tr>
+            <td>{{ curso.id }}</td>
+            <td>{{ curso.curso }}</td>
+            <td>{{ curso.duracion }}</td>
+            <td>{{ curso.plataforma }}</td>
+            <td>{{ curso.dificultad }}</td>
+            <td>
+                <!-- Botón para editar -->
+                <a href="{% url 'editar_curso' curso.id %}">✏️ Editar</a> | 
+                <!-- Botón para eliminar -->
+                <a href="{% url 'eliminar_curso' curso.id %}" onclick="return confirm('¿Seguro que deseas eliminar este curso?')">🗑️ Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

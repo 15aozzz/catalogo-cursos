@@ -3,9 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Registrar Curso</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/estilos.css' %}">
 </head>
 <body>
     <h1>Registrar Curso</h1>
+
+    <!-- Botones de navegación -->
+    <nav>
+        <a href="{% url 'listar_cursos' %}">
+            <button type="button">📋 Ver Cursos</button>
+        </a>
+    </nav>
+    <hr>
+
+    <!-- Formulario de registro -->
     <form method="POST">
         {% csrf_token %}
         

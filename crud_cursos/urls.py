@@ -16,10 +16,24 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from cursos import views  # Importa la vista
+from cursos import views  # Importa todas las vistas que creaste en la app cursos
 
 urlpatterns = [
+    # Panel de administración de Django
     path('admin/', admin.site.urls),
-    path('', views.registrar_curso, name='inicio'),  # La raíz apunta al formulario
+
+    # Página principal -> aquí redirigimos al formulario de registro
+    path('', views.registrar_curso, name='inicio'),
+
+    # Ruta para registrar un curso (muestra y procesa el formulario)
     path('registrar/', views.registrar_curso, name='registrar_curso'),
+
+    # Ruta para listar todos los cursos registrados
+    path('cursos/', views.listar_cursos, name='listar_cursos'),
+
+    # Ruta para editar un curso (se pasa el ID en la URL)
+    path('editar/<int:id>/', views.editar_curso, name='editar_curso'),
+
+    # Ruta para eliminar un curso (se pasa el ID en la URL)
+    path('eliminar/<int:id>/', views.eliminar_curso, name='eliminar_curso'),
 ]

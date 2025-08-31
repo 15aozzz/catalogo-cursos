@@ -1,0 +1,104 @@
+/* ----- Estilos globales ----- */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* ----- Encabezados ----- */
+h1 {
+    text-align: center;
+    margin-top: 20px;
+    color: #2c3e50;
+}
+
+/* ----- Formularios ----- */
+form {
+    width: 400px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 3px 8px rgba(0,0,0,0.1);
+}
+
+label {
+    font-weight: bold;
+}
+
+input, select, button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #3498db;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* ----- Navegación ----- */
+nav {
+    text-align: center;
+    margin: 20px 0;
+}
+
+nav a button {
+    width: auto;
+    margin: 5px;
+    padding: 10px 20px;
+    background: #27ae60;
+}
+
+nav a button:hover {
+    background: #219150;
+}
+
+/* ----- Tablas ----- */
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 3px 8px rgba(0,0,0,0.1);
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background: #2c3e50;
+    color: white;
+}
+
+tr:hover {
+    background-color: #f2f2f2;
+}
+
+/* ----- Mensajes ----- */
+p {
+    text-align: center;
+    font-size: 16px;
+}
+
+p[style*="green"] {
+    font-weight: bold;
+    color: #27ae60 !important;
+}
