@@ -1,0 +1,19 @@
+# Archivos de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Entornos virtuales
+env/
+venv/
+
+# Base de datos SQLite
+db.sqlite3
+
+# Archivos de migraciones compilados
+*.log
+
+# Archivos de Django
+media/
+staticfiles/
