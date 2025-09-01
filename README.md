@@ -26,15 +26,15 @@ Incluye:
 
 Estructura principal del proyecto:
 
-catalogo-cursos-master
-├── crud_cursos/        # Configuración principal del proyecto Django
-├── cursos/             # Aplicación encargada de la gestión de cursos
-│   ├── models.py       # Definición del modelo de Curso
-│   ├── views.py        # Lógica de negocio (controladores)
-│   ├── urls.py         # Rutas de la app
-│   ├── templates/      # Vistas en HTML (listar, registrar, editar)
-│   └── static/css/     # Archivos de estilo
-└── manage.py           # Script de administración de Django
+            catalogo-cursos-master
+            ├── crud_cursos/        # Configuración principal del proyecto Django
+            ├── cursos/             # Aplicación encargada de la gestión de cursos
+            │   ├── models.py       # Definición del modelo de Curso
+            │   ├── views.py        # Lógica de negocio (controladores)
+            │   ├── urls.py         # Rutas de la app
+            │   ├── templates/      # Vistas en HTML (listar, registrar, editar)
+            │   └── static/css/     # Archivos de estilo
+            └── manage.py           # Script de administración de Django
 
 ---
 
